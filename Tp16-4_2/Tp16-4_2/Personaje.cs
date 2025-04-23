@@ -6,32 +6,33 @@ using System.Threading.Tasks;
 
 namespace Tp16_4_2
 {
-    internal class Personaje
+    public class Personaje
     {
+        //public Personaje(string color, int vida, int defensa, int fuerza, 
+        //    int mana)
+        //{
+        //    Color = color;
+        //    Vida = vida;
+        //    Defensa = defensa;
+        //    Fuerza = fuerza;
+        //    Mana = mana;
+        //    Dmg = false;
+        //}
+
         public string Color { get; set; }
         public int Vida { get; set; }
         public int Defensa { get; set; }
         public int Fuerza { get; set; }
         public int Mana { get; set; }
+        public bool Dmg { get; set; }
 
-        public int DañoHecho { get; set; }
-
-        public void Cargar ()
-        {
-            Console.WriteLine("ingrese su color");
-            Color = Console.ReadLine();
-            Console.WriteLine("ingrese su vida");
-            Vida = int.Parse(Console.ReadLine());
-            Console.WriteLine("ingrese su defensa");
-            Defensa = int.Parse(Console.ReadLine());
-            Console.WriteLine("ingrese su fuerza");
-            Fuerza = int.Parse(Console.ReadLine());
-            Console.WriteLine("ingrese su mana");
-            Mana = int.Parse(Console.ReadLine());
-        }
+       
         public void CambiarColor(string nuevoColor)
         { 
-            Color = nuevoColor;
+            if (nuevoColor != Color)
+            {
+                Color = nuevoColor;
+            }
         }
 
         public int RecibirDaño(int daño)
@@ -45,7 +46,7 @@ namespace Tp16_4_2
             Vida = Vida - dañoRecibido;
             return dañoRecibido;
         }
-        public int Atacar(Personaje objetivo)
+        public bool Atacar(Personaje objetivo)
         {
 
             if (Mana >= 0)
@@ -53,21 +54,14 @@ namespace Tp16_4_2
                 int daño = Fuerza;
                 Mana--;
                 objetivo.RecibirDaño(daño);
+                Dmg = true;
             }
             else
             {
-                DañoHecho = 0;
+                Dmg = false;
             }
-            return DañoHecho;
+            return Dmg;
         }
-        public void muestra() 
-        {
-            Console.WriteLine($"el color es{Color}");
-            Console.WriteLine($"la vida es{Vida}");
-            Console.WriteLine($"el defensa es{Defensa}");
-            Console.WriteLine($"el Fuerza es{Fuerza}");
-            Console.WriteLine($"el Mana es{Mana}");
-            Console.WriteLine($"el color es{Color}");
-        }
+      
     }
 }

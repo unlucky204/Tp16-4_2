@@ -1,37 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\info2-pc1\\source\\repos\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj": {}
+    "C:\\Users\\info-1.INDU\\Desktop\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\info2-pc1\\source\\repos\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj": {
+    "C:\\Users\\info-1.INDU\\Desktop\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\info2-pc1\\source\\repos\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj",
+        "projectUniqueName": "C:\\Users\\info-1.INDU\\Desktop\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj",
         "projectName": "Tp16-4_2",
-        "projectPath": "C:\\Users\\info2-pc1\\source\\repos\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj",
-        "packagesPath": "C:\\Users\\info2-pc1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\info2-pc1\\source\\repos\\Tp16-4_2\\Tp16-4_2\\obj\\",
+        "projectPath": "C:\\Users\\info-1.INDU\\Desktop\\Tp16-4_2\\Tp16-4_2\\Tp16-4_2.csproj",
+        "packagesPath": "C:\\Users\\info-1.INDU\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\info-1.INDU\\Desktop\\Tp16-4_2\\Tp16-4_2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\info2-pc1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\info-1.INDU\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -39,33 +37,22 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }
