@@ -5,6 +5,9 @@ Cargar(personaje);
 Personaje personaje2 = new Personaje();
 Cargar(personaje2);
 Console.Clear();
+PocionVida PocionVida = new PocionVida();
+PocionMana PocionMana = new PocionMana();
+
 while (true)
 {
     Muestra(personaje);
@@ -40,6 +43,26 @@ void menu()
             Console.WriteLine("ingrese el a que pesonaje quiere atacar");
             Console.WriteLine("1) Objetivo");
             personaje.Atacar(personaje2);
+            break;
+        case '4':
+            Console.WriteLine("1 - Poción De Vida / 2 - Poción De Maná");
+            int op2 = int.Parse(Console.ReadLine());
+            if (op2 == 1)
+            {
+                Console.WriteLine("Ingrese El Valor Mínimo Para La Vida");
+                PocionVida.Minimo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese El Valor Máximo Para La Vida");
+                PocionVida.Maximo = int.Parse(Console.ReadLine());
+                PocionVida.Usar(personaje);
+            }
+            else if (op2 == 2)
+            {
+                Console.WriteLine("Ingrese El Valor Mínimo Para El Maná");
+                PocionMana.Minimo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese El Valor Máximo Para El Maná");
+                PocionMana.Maximo = int.Parse(Console.ReadLine());
+                PocionMana.Usar(personaje);
+            }
             break;
     }
 }

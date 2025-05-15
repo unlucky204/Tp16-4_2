@@ -25,8 +25,11 @@ namespace Tp16_4_2
         public int Fuerza { get; set; }
         public int Mana { get; set; }
         public bool Dmg { get; set; }
+        public int ManaMax { get; set; }
+        public int VidaMax { get; set; }
 
-       
+
+
         public void CambiarColor(string nuevoColor)
         { 
             if (nuevoColor != Color)
