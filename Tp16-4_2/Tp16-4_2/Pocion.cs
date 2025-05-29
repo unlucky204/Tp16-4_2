@@ -12,6 +12,6 @@ namespace Tp16_4_2
         public int Minimo { get; set; }
         public int Maximo { get; set; }
 
-        //public abstract void Crear(Pocion pocion);
+        
     }
 }

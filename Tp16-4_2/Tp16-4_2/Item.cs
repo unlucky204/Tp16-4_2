@@ -8,8 +8,6 @@ namespace Tp16_4_2
 {
     public abstract class Item
     {
-        public int Id { get; set; }
-
         public abstract int Usar(Personaje Jugador);
     }
 }

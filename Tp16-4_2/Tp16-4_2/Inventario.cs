@@ -12,17 +12,12 @@ namespace Tp16_4_2
 
         public void AñadirItem(Item item)
         {
-            Item NuevoItem = item;
-            ItemList.Add(NuevoItem);
-            NuevoItem.Id = ItemList.LastIndexOf(NuevoItem);
-            Console.WriteLine($"se agrego un item en la posicion {NuevoItem.Id}");
+            ItemList.Add(item);
         }
 
         public void borrarItem(Item item)
         {
-            Item NuevoItem = item;
-            ItemList.RemoveAt(NuevoItem.Id);
-            Console.WriteLine($"se Borro un item en la posicion {NuevoItem.Id}");
+            ItemList.Remove(item);
         }
     }
 }

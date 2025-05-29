@@ -1,30 +1,28 @@
 ﻿using Tp16_4_2;
 
-PocionVida PocionVida = new PocionVida();
-PocionMana PocionMana = new PocionMana();
-Personaje personaje = new Personaje();
+List<Personaje> Personajes = new List<Personaje>();
 Console.WriteLine("Bienvenido");
-Cargar(personaje);
-Personaje personaje2 = new Personaje();
-Cargar(personaje2);
-Console.Clear();
+Cargar();
+Cargar();
 
 while (true)
 {
-    Muestra(personaje);
-    Muestra(personaje2);
+    Console.Clear();
+    Muestra(Personajes.ElementAt(0));
+    Muestra(Personajes.ElementAt(1));
     menu();
 }
 
 void menu()
 {
+    Personaje personaje = Personajes.ElementAt(0);
     char op;
     Console.WriteLine("=====================================");
     Console.WriteLine("ingrese que accion quiere hacer");
     Console.WriteLine("1) Cambiar color");
     Console.WriteLine("2) Recibir daño");
     Console.WriteLine("3) Atacar");
-    Console.WriteLine("4) pociones");
+    Console.WriteLine("4) inventario");
     op = Char.Parse(Console.ReadLine());
     switch (op) 
     { 
@@ -44,22 +42,33 @@ void menu()
             Console.WriteLine("=====================================");
             Console.WriteLine("ingrese el a que pesonaje quiere atacar");
             Console.WriteLine("1) Objetivo");
-            personaje.Atacar(personaje2);
+            personaje.Atacar(personaje);
             break;
         case '4':
+            
+            Console.WriteLine("Que pesonaje quiere usar la pocion");
+            Console.WriteLine("1) Personaje 1");
+            Console.WriteLine("2) Personaje 2");
+            char opP = Char.Parse(Console.ReadLine());
+            switch (opP)
+            {
+                case '1':
+                    personaje = Personajes.ElementAt(0);
+                    break;
+                case '2':
+                    personaje = Personajes.ElementAt(1);
+                    break;
+            }
+            Console.WriteLine("Que pocion quiere usar");
             Console.WriteLine("1 - Poción De Vida / 2 - Poción De Maná");
             int op2 = int.Parse(Console.ReadLine());
             switch (op2)
             {
-                
                 case 1:
                     {
+                        PocionVida PocionVida = new PocionVida();
                         if (personaje.inventario.ItemList.Contains(PocionVida))
                         {
-                            Console.WriteLine("Ingrese El Valor Mínimo Para La Vida");
-                            PocionVida.Minimo = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Ingrese El Valor Máximo Para La Vida");
-                            PocionVida.Maximo = int.Parse(Console.ReadLine());
                             PocionVida.Usar(personaje);
                             personaje.inventario.borrarItem(PocionVida);
                         }
@@ -71,12 +80,10 @@ void menu()
                     break;
                 case 2:
                     {
+                        PocionMana PocionMana = new PocionMana();
                         if (personaje.inventario.ItemList.Contains(PocionMana))
                         {
-                            Console.WriteLine("Ingrese El Valor Mínimo Para El Maná");
-                            PocionMana.Minimo = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Ingrese El Valor Máximo Para El Maná");
-                            PocionMana.Maximo = int.Parse(Console.ReadLine());
+                           
                             PocionMana.Usar(personaje);
                             personaje.inventario.borrarItem(PocionMana);
                         }
@@ -94,29 +101,41 @@ void menu()
 }
 
 
-void Cargar(Personaje personaje)
+void Cargar()
 {
-    Personaje Jugador = new Personaje();
-    Jugador = personaje;
+    Personaje Personaje = new Personaje();
+    PocionVida PocionVida = new PocionVida();
+    PocionMana PocionMana = new PocionMana();
     Console.WriteLine("=====================================");
     Console.WriteLine("Ingrese los datos del jugador");
     Console.WriteLine("ingrese su color");
-    Jugador.Color = Console.ReadLine();
+    Personaje.Color = Console.ReadLine();
     Console.WriteLine("ingrese su vida");
-    Jugador.Vida = int.Parse(Console.ReadLine());
+    Personaje.Vida = int.Parse(Console.ReadLine());
     Console.WriteLine("ingrese su defensa");
-    Jugador.Defensa = int.Parse(Console.ReadLine());
+    Personaje.Defensa = int.Parse(Console.ReadLine());
     Console.WriteLine("ingrese su fuerza");
-    Jugador.Fuerza = int.Parse(Console.ReadLine());
+    Personaje.Fuerza = int.Parse(Console.ReadLine());
     Console.WriteLine("ingrese su mana");
-    Jugador.Mana = int.Parse(Console.ReadLine());
+    Personaje.Mana = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese El Valor Mínimo Para El Maná");
+    PocionMana.Minimo = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese El Valor Máximo Para El Maná");
+    PocionMana.Maximo = int.Parse(Console.ReadLine());
     Console.WriteLine("Añadida una pocion de mana");
-    Jugador.inventario.AñadirItem(PocionMana);
+    Personaje.inventario.AñadirItem(PocionMana);
+    Console.WriteLine("Ingrese El Valor Mínimo Para La Vida");
+    PocionVida.Minimo = int.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese El Valor Máximo Para La Vida");
+    PocionVida.Maximo = int.Parse(Console.ReadLine());
     Console.WriteLine("Añadida una pocion de Vida");
-    Jugador.inventario.AñadirItem(PocionVida);
-    Jugador.ManaMax = Jugador.Mana;
-    Jugador.VidaMax = Jugador.Vida;
-
+    Personaje.inventario.AñadirItem(PocionVida);
+    Console.WriteLine("Añadida una pocion de mana");
+    Personaje.inventario.AñadirItem(PocionMana);
+    Personaje.ManaMax = Personaje.Mana;
+    Personaje.VidaMax = Personaje.Vida;
+    Personajes.Add(Personaje);
+    Console.WriteLine($"Jugador {Personajes.} creado correctamente");
 }
 
 
@@ -130,7 +149,6 @@ void Muestra(Personaje personaje)
     Console.WriteLine($"el defensa es {Jugador.Defensa}");
     Console.WriteLine($"el Fuerza es {Jugador.Fuerza}");
     Console.WriteLine($"el Mana es {Jugador.Mana}");
-    Console.WriteLine($"el color es {Jugador.Color}");
     foreach (var i in personaje.inventario.ItemList)
     {
         Console.WriteLine($"-{i.ToString()}");
