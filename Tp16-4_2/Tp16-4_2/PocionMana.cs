@@ -8,21 +8,31 @@ namespace Tp16_4_2
 {
     public class PocionMana : Pocion
     {
+        
         public override int Usar(Personaje personaje)
         {
-            int ManaRestaurado = 0;
-            if (personaje.Mana < personaje.ManaMax)
-            {
-                Random random = new Random();
-                int NumeroRandom = random.Next(Minimo, Maximo);
-                ManaRestaurado = personaje.Mana + NumeroRandom;
-                if (ManaRestaurado > personaje.ManaMax)
+            
+                int ManaRestaurado = 0;
+                if (personaje.Mana < personaje.ManaMax)
                 {
-                    ManaRestaurado = personaje.ManaMax;
+                    Random random = new Random();
+                    int NumeroRandom = random.Next(Minimo, Maximo);
+                    ManaRestaurado = personaje.Mana + NumeroRandom;
+                    if (ManaRestaurado > personaje.ManaMax)
+                    {
+                        ManaRestaurado = personaje.ManaMax;
+                    }
+                    personaje.Mana = ManaRestaurado;
                 }
-            }
-            personaje.Mana = ManaRestaurado;
+               
             return ManaRestaurado;
+        }
+        
+        public override string ToString()
+        {
+
+            return "Pocion de mana";
+
         }
     }
 }

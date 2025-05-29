@@ -8,17 +8,6 @@ namespace Tp16_4_2
 {
     public class Personaje
     {
-        //public Personaje(string color, int vida, int defensa, int fuerza, 
-        //    int mana)
-        //{
-        //    Color = color;
-        //    Vida = vida;
-        //    Defensa = defensa;
-        //    Fuerza = fuerza;
-        //    Mana = mana;
-        //    Dmg = false;
-        //}
-
         public string Color { get; set; }
         public int Vida { get; set; }
         public int Defensa { get; set; }
@@ -27,6 +16,7 @@ namespace Tp16_4_2
         public bool Dmg { get; set; }
         public int ManaMax { get; set; }
         public int VidaMax { get; set; }
+        public Inventario inventario = new Inventario();
 
 
 

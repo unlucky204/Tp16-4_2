@@ -8,8 +8,10 @@ namespace Tp16_4_2
 {
     public class PocionVida : Pocion
     {
+        
         public override int Usar(Personaje personaje)
         {
+            
             int VidaRestaurada = 0;
             if (personaje.Vida < personaje.VidaMax)
             {
@@ -20,9 +22,15 @@ namespace Tp16_4_2
                 {
                     VidaRestaurada = personaje.VidaMax;
                 }
+                personaje.Vida = VidaRestaurada;
             }
-            personaje.Vida = VidaRestaurada;
             return VidaRestaurada;
+        }
+        public override string ToString()
+        {
+
+           return "Pocion de vida";
+            
         }
     }
 }

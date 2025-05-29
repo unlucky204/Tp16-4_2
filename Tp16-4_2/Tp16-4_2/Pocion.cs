@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Tp16_4_2
 {
-    public abstract class Pocion
+    public abstract class Pocion:Item
     {
         public int Minimo { get; set; }
         public int Maximo { get; set; }
 
-        public abstract int Usar(Personaje Jugador);
+        //public abstract void Crear(Pocion pocion);
     }
 }
